@@ -1,7 +1,7 @@
 // trailbaseProvider.js
 import { fetchUtils } from "react-admin";
 
-const apiUrl = "https://https://cuddly-halibut-4j7wqjqw4x9gh7g7j.github.dev/";
+const apiUrl = "https://stunning-sniffle-g4q7x4x799g9hw9x4-4000.app.github.dev/";
 const httpClient = (url, options = {}) => {
   if (!options.headers) {
     options.headers = new Headers({ Accept: "application/json" });

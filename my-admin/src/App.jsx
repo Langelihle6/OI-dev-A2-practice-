@@ -1,16 +1,22 @@
-import { Admin, Resource, ListGuesser} from "react-admin";
-/*import { Route } from "react-router-dom"; */
+import { Admin, CustomRoutes, Resource, ListGuesser } from "react-admin";
+import { Route } from "react-router-dom";
 import { createTrailbaseProvider } from "./ra-trailbase";
+import { CreateUser, LoginPage } from "./create_user"; 
 
-
-const TRAILBASE_URL = "http://stunning-sniffle-g4q7x4x799g9hw9x4-4000.app.github.dev/";
-const { dataProvider} = await createTrailbaseProvider(TRAILBASE_URL);
+const TRAILBASE_URL = "https://refactored-parakeet-g4q7x4x79996fwr6j-4000.app.github.dev/";
+const { dataProvider } = await createTrailbaseProvider(TRAILBASE_URL);
 
 function App() {
   return (
-    <Admin dataProvider={dataProvider}  >
-      <Resource name = "assignments" list= {ListGuesser} />
-      
+    <Admin loginPage={LoginPage} dataProvider={dataProvider}  >
+      < Resource name = "EMPLOYEES" list = {ListGuesser} />
+      < Resource name = "REPORTS" list = {ListGuesser} />
+      < Resource name = "DEPARTMENTS" list = {ListGuesser} />
+      < Resource name = "PROJECTS" list = {ListGuesser} /> 
+      < Resource name = "ASSIGNMENTS" list = {ListGuesser} /> 
+      <CustomRoutes noLayout>
+        <Route path="/create-user" element={<CreateUser />} />
+      </CustomRoutes>
     </Admin>
   );
 }
