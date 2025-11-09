@@ -1,7 +1,14 @@
-import { DataTable, List } from 'react-admin';
+import { List, DataTable, TextInput } from 'react-admin';
+
+const projectFilters = [
+    <TextInput label="Search" source="q" alwaysOn />,
+    <TextInput label="Title" source="title" />,
+    <TextInput label="Description" source="description" />,
+];
 
 export const ProjectList = () => (
-    <List>
+    
+    <List filters={projectFilters}>
         <DataTable>
             <DataTable.NumberCol source="budget" />
             <DataTable.Col source="description" />

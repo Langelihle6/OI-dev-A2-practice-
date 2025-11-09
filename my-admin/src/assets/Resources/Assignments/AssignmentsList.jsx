@@ -1,7 +1,13 @@
-import { DataTable, List, ReferenceField } from 'react-admin';
+import { TextInput, List, DataTable, ReferenceField } from 'react-admin';
+
+
+const assignmentFilters = [
+    <TextInput label="Search" source="q" alwaysOn />,
+    <TextInput label="Role" source="role" />,
+];
 
 export const AssignmentList = () => (
-    <List>
+    <List filters={assignmentFilters}>
         <DataTable>
             <DataTable.Col source="employee_id">
                 <ReferenceField source="employee_id" reference="employees" />
